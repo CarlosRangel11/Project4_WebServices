@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- http://www.public.asu.edu/carange4/Parks.xsd -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="https://www.public.asu.edu/~carange4/Parks.xsd"
+        xmlns="https://www.public.asu.edu/~carange4/Parks.xsd"
+        elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- 
+        in a typical tree, it starts at a root and expands. should the schema follow that structure, or should it define every node as a separate element. for example: 
+    -->
+
+    <!-- CHILD OF [NULL] -->
+    <!-- Complex type Parks contains sequence of:
+        Park: Complex -->
+    <xsd:element name="Parks">
+        <xsd:complexType>
+            <xsd:sequence>
+
+                <!-- CHILD OF [PARKS] -->
+                <!-- Complex type Park contains sequence of:
+                    Owner
+                    Name
+                    Reservation
+                    Neighboring_States (1+ occurances)
+                    Established in        
+                
+                    Attributes: type := string {REQUIRED}    -->
+                <xsd:element name="Park" minOccurs="1" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <!-- Simple types Owner and Name with no attributes or children -->
+                            <xsd:element name="Owner" type="xsd:string" />
+                            <xsd:element name="Name" type="xsd:string" />
+
+                            <!-- Complex type Reservation containing:
+                                Address: string
+                                Url: string (1+ occurrances)        -->
+                            <xsd:element name="Reservation" minOccurs="1" maxOccurs="1" >
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="Address" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
+                                        <xsd:element name="Url" type="xsd:string" />
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+
+                            <xsd:element name="Neighboring_States" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
+
+                            <!-- Simple Type Established_In containing:
+                                Attribute {string}      -->
+                            <xsd:element name="Established_In">
+                                <xsd:complexType>
+                                    <xsd:simpleContent>
+                                        <xsd:extension base="xsd:string">
+                                            <xsd:attribute name="Founder" type="xsd:string" use="optional" />
+                                        </xsd:extension>
+                                    </xsd:simpleContent>
+                                </xsd:complexType>
+                            </xsd:element>  <!-- Established_In -->
+                            
+                        </xsd:sequence> 
+
+                        <!-- Park has 1 attribute: type ; that is a string-->
+                        <xsd:attribute name="type" type="xsd:string" use="required"/>
+                        
+                    </xsd:complexType> 
+                </xsd:element> <!-- Park -->
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element> <!-- Parks -->
+</xsd:schema>

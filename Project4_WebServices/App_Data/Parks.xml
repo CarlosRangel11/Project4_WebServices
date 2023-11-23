@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Create an XML file Parks.xml as an instance of your schema file. 
+     Enter the information of at least ten (10) real parks into the Parks.xml file -->
+<Parks xmlns="https://www.public.asu.edu/~carange4/Parks.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.public.asu.edu/~carange4/Parks.xsd">
+  <!-- Creating 10 'Park' instances using real park information -->
+  <!-- info needed from each park [ATTR: type: string]: 
+        Owner: string
+        Name: string
+        Reservation{
+            Address*: string
+            Url: string
+        }
+        Neighboring_States*: string
+        Established_In: string [ATTR: Founder: string(optional)]
+
+        TEMPLATE: 
+        <Park type="">
+            <Owner></Owner>
+            <Name></Name>
+            <Reservation>
+                <Address></Address>
+                <Url></Url>
+            </Reservation>
+
+            <Neighboring_States></Neighboring_States>
+            <Established_In></Established_In>
+        </Park>
+    -->
+  <!-- 1. Redwood National Forest, California -->
+  <Park type="National Forest">
+    <Owner>US Federal Government</Owner>
+    <Name>Redwood National and State Parks</Name>
+    <Reservation>
+      <Address>1111 Second Street, Crescent City, CA 95531</Address>
+      <Url>https://www.nps.gov/redw/index.htm</Url>
+    </Reservation>
+    <Neighboring_States>California</Neighboring_States>
+    <Established_In>1968</Established_In>
+  </Park>
+  <!-- 2. Petrified Forest, Arizona -->
+  <Park type="National Park">
+    <Owner>Federal Government</Owner>
+    <Name>Petrified Forest National Park</Name>
+    <Reservation>
+      <Address>1 Park Road, #2217, Petrified Forest, AZ 86028</Address>
+      <Url>https://www.nps.gov/pefo/index.htm</Url>
+    </Reservation>
+    <Neighboring_States>Arizona</Neighboring_States>
+    <Established_In>1962</Established_In>
+  </Park>
+  <!-- 3. Yellowstone National Park, Wyoming -->
+  <Park type="National Park">
+    <Owner>Federal Government</Owner>
+    <Name>Yellowstone National Park</Name>
+    <Reservation>
+      <Address>Mammoth Hot Springs, Yellowstone National Park, WY 82190</Address>
+      <Url>https://www.nps.gov/yell/index.htm</Url>
+    </Reservation>
+    <Neighboring_States>Wyoming</Neighboring_States>
+    <Neighboring_States>Montana</Neighboring_States>
+    <Neighboring_States>Idaho</Neighboring_States>
+    <Established_In Founder="Ulysses S. Grant">1872</Established_In>
+  </Park>
+  <!-- 4.  Kings Canyon, California-->
+  <Park type="National Park">
+    <Owner>Federal Government</Owner>
+    <Name>Kings Canyon National Park</Name>
+    <Reservation>
+      <Address>47050 Generals Highway, Three Rivers, CA 93271</Address>
+      <Url>https://www.nps.gov/seki/index.htm</Url>
+    </Reservation>
+    <Neighboring_States>California</Neighboring_States>
+    <Established_In>1940</Established_In>
+  </Park>
+  <!-- 5. Hawai'i Volcanoes, Hawai'i -->
+  <Park type="National Park">
+    <Owner>Federal Government</Owner>
+    <Name>Hawai'i Volcanoes National Park</Name>
+    <Reservation>
+      <Address>1 Crater Rim Drive, Hawaii National Park, HI 96718</Address>
+      <Url>https://www.nps.gov/havo/index.htm</Url>
+    </Reservation>
+    <Neighboring_States>Hawaii</Neighboring_States>
+    <Established_In>1916</Established_In>
+  </Park>
+  <!-- 6. Grand Canyon, Arizona -->
+  <Park type="National Park">
+    <Owner>Federal Government</Owner>
+    <Name>Grand Canyon National Park</Name>
+    <Reservation>
+      <Address>20 South Entrance Road, Grand Canyon, AZ 86023</Address>
+      <Url>https://www.nps.gov/grca/index.htm</Url>
+    </Reservation>
+    <Neighboring_States>Arizona</Neighboring_States>
+    <Established_In Founder="Theodore Roosevelt">1919</Established_In>
+  </Park>
+  <!-- 7. Everglades, Florida -->
+  <Park type="National Park">
+    <Owner>Federal Government</Owner>
+    <Name>Everglades National Park</Name>
+    <Reservation>
+      <Address>40001 State Road 9336, Homestead, FL 33034</Address>
+      <Url>https://www.nps.gov/ever/index.htm</Url>
+    </Reservation>
+    <Neighboring_States>Florida</Neighboring_States>
+    <Established_In>1934</Established_In>
+  </Park>
+  <!-- 8. Death Valley, California -->
+  <Park type="National Park">
+    <Owner>Federal Government</Owner>
+    <Name>Death Valley National Park</Name>
+    <Reservation>
+      <Address>Furnace Creek, CA 92328</Address>
+      <Url>https://www.nps.gov/deva/index.htm</Url>
+    </Reservation>
+    <Neighboring_States>California, Nevada</Neighboring_States>
+    <Established_In>1933</Established_In>
+  </Park>
+  <!-- 9. Yosemite, California -->
+  <Park type="National Park">
+    <Owner>Federal Government</Owner>
+    <Name>Yosemite National Park</Name>
+    <Reservation>
+      <Address>Yosemite Village, CA 95389</Address>
+      <Url>https://www.nps.gov/yose/index.htm</Url>
+    </Reservation>
+    <Neighboring_States>California</Neighboring_States>
+    <Established_In>1890</Established_In>
+  </Park>
+  <!-- 10. Virgin Islands, Virginia -->
+  <Park type="National Park">
+    <Owner>Federal Government</Owner>
+    <Name>Virgin Islands National Park</Name>
+    <Reservation>
+      <Address>1300 Cruz Bay Creek, St. John, VI 00830</Address>
+      <Url>https://www.nps.gov/viis/index.htm</Url>
+    </Reservation>
+    <Neighboring_States>U.S. Virgin Islands</Neighboring_States>
+    <Established_In>1956</Established_In>
+  </Park>
+  <Park type="poop">
+    <Owner>bert</Owner>
+    <Name>karen park</Name>
+    <Reservation>
+      <Address>1234 street st.</Address>
+      <Url>www.karen.com</Url>
+    </Reservation>
+    <Neighboring_States>Arizona</Neighboring_States>
+    <Established_In>2023</Established_In>
+  </Park>
+</Parks>
